@@ -34,7 +34,8 @@ https://docs.google.com/spreadsheets/d/1yvS4c0eo-EHma8t_1DU-53HyVQ86TP3636Rwh79l
 https://cacoo.com/diagrams/UWxs4wb3Zw3Mloka/56C06
 
 ## ER図
-"https://user-images.githubusercontent.com/100674671/170271626-8465521d-0d13-4f05-b3eb-14dcfa10ad94.png"
+<img width="537" alt="スクリーンショット 2022-05-25 22 19 36" src="https://user-images.githubusercontent.com/100674671/170271626-8465521d-0d13-4f05-b3eb-14dcfa10ad94.png">
+
 
 ## 画面推移図
-"https://user-images.githubusercontent.com/100674671/170181095-d1add05a-0bc5-4404-83b8-bee69985e75c.png"
+<img width="782" alt="スクリーンショット 2022-05-25 13 35 43" src="https://user-images.githubusercontent.com/100674671/170181095-d1add05a-0bc5-4404-83b8-bee69985e75c.png">
