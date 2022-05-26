@@ -27,6 +27,9 @@ $ rails s
 ## カタログ設計
 https://docs.google.com/spreadsheets/d/1yvS4c0eo-EHma8t_1DU-53HyVQ86TP3636Rwh79luMY/edit?usp=sharing
 
+• 参考資料
+https://www.ajpmonline.org/article/S0749-3797(08)00374-7/fulltext
+
 ## テーブル定義書
 https://docs.google.com/spreadsheets/d/1yvS4c0eo-EHma8t_1DU-53HyVQ86TP3636Rwh79luMY/edit?usp=sharing
 
