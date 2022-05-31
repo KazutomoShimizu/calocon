@@ -1,29 +1,36 @@
 class FoodsController < ApplicationController
   before_action :set_food, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!
+  before_action :baria_user, only: %i[ edit destroy update ]
 
-  # GET /foods or /foods.json
   def index
     @foods = Food.all
   end
 
-  # GET /foods/1 or /foods/1.json
   def show
+    @feed = Food.find_by(id:params[:id])
+    @user = User.find_by(id:@food.user_id)
+    @bookmark = current_user.bookmarks.find_by(food_id: @food.id)
   end
 
-  # GET /foods/new
   def new
-    @food = Food.new
+    if params[:back]
+      @food = Food.new(food_params)
+    else
+      @food = Food.new
+    end
   end
 
-  # GET /foods/1/edit
   def edit
+    @food = Food.find(params[:id])
+    if @food.user == current_user
+      render "edit"
+    else
+      redirect_to foods_path
+    end
   end
 
-  # POST /foods or /foods.json
   def create
-    @food = Food.new(food_params)
-
+    @food = current_user.foods.build(food_params)
     respond_to do |format|
       if @food.save
         format.html { redirect_to food_url(@food), notice: "Food was successfully created." }
@@ -35,7 +42,6 @@ class FoodsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /foods/1 or /foods/1.json
   def update
     respond_to do |format|
       if @food.update(food_params)
@@ -48,7 +54,6 @@ class FoodsController < ApplicationController
     end
   end
 
-  # DELETE /foods/1 or /foods/1.json
   def destroy
     @food.destroy
 
@@ -59,13 +64,12 @@ class FoodsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_food
-      @food = Food.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def food_params
-      params.require(:food).permit(:image, :image_cache, :body)
-    end
+  def set_food
+    @food = Food.find(params[:id])
+  end
+
+  def food_params
+    params.require(:food).permit(:image, :image_cache, :body)
+  end
 end

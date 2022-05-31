@@ -3,4 +3,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   mount_uploader :image, ImageUploader
   has_many :foods
+  has_many :bookmarks, dependent: :destroy
 end
