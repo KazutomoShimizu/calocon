@@ -17,6 +17,8 @@ gem 'carrierwave', '~> 2.0'
 gem 'mini_magick'
 gem 'dotenv-rails'
 gem "bulma-rails"
+gem 'rails_admin', '~> 3.0'
+gem 'cancancan'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
