@@ -1,0 +1,32 @@
+<%= form_with(model: weight_history, local: true) do |form| %>
+  <% if weight_history.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(weight_history.errors.count, "error") %> prohibited this weight_history from being saved:</h2>
+
+      <ul>
+        <% weight_history.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :weight %>
+    <%= form.number_field :weight %>
+  </div>
+
+  <div class="field">
+    <%= form.label :start_time %>
+    <%= form.datetime_select :start_time %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

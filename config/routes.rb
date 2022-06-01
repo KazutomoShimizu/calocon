@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root 'foods#index'
   resources :users
   resources :bookmarks, only: [:create, :destroy, :show]
+  resources :weight_histories
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end

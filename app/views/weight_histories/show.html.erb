@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @weight_history.user_id %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @weight_history.weight %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @weight_history.start_time %>
+</p>
+
+<%= link_to 'Edit', edit_weight_history_path(@weight_history) %> |
+<%= link_to 'Back', weight_histories_path %>

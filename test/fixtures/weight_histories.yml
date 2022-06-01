@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  weight: 1
+  start_time: 2022-06-01 14:08:51
+
+two:
+  user: two
+  weight: 1
+  start_time: 2022-06-01 14:08:51

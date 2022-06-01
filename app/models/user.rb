@@ -4,4 +4,5 @@ class User < ApplicationRecord
   mount_uploader :image, ImageUploader
   has_many :foods
   has_many :bookmarks, dependent: :destroy
+  has_many :weight_histories
 end
