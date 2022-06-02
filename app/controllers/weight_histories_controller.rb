@@ -6,7 +6,6 @@ class WeightHistoriesController < ApplicationController
   end
 
   def show
-    @weight_history = WeightHistory.find(id:params[:id])
     @user = User.find_by(id:@weight_history.user_id)
   end
 
