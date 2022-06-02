@@ -1,27 +1,28 @@
 class WeightHistoriesController < ApplicationController
   before_action :set_weight_history, only: %i[ show edit update destroy ]
 
-  # GET /weight_histories or /weight_histories.json
   def index
-    @weight_histories = WeightHistory.all
+    @weight_histories = WeightHistory.where(user_id: current_user.id).includes(:user).order("created_at DESC")
   end
 
-  # GET /weight_histories/1 or /weight_histories/1.json
   def show
+    @weight_history = WeightHistory.find(id:params[:id])
+    @user = User.find_by(id:@weight_history.user_id)
   end
 
-  # GET /weight_histories/new
   def new
-    @weight_history = WeightHistory.new
+    if params[:back]
+      @weight_history = WeightHistory.new(weight_history_params)
+    else
+      @weight_history = WeightHistory.new
+    end
   end
 
-  # GET /weight_histories/1/edit
   def edit
   end
 
-  # POST /weight_histories or /weight_histories.json
   def create
-    @weight_history = WeightHistory.new(weight_history_params)
+    @weight_history = current_user.weight_histories.build(weight_history_params)
 
     respond_to do |format|
       if @weight_history.save
@@ -34,7 +35,6 @@ class WeightHistoriesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /weight_histories/1 or /weight_histories/1.json
   def update
     respond_to do |format|
       if @weight_history.update(weight_history_params)
@@ -47,7 +47,6 @@ class WeightHistoriesController < ApplicationController
     end
   end
 
-  # DELETE /weight_histories/1 or /weight_histories/1.json
   def destroy
     @weight_history.destroy
 
@@ -58,12 +57,10 @@ class WeightHistoriesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_weight_history
       @weight_history = WeightHistory.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def weight_history_params
       params.require(:weight_history).permit(:user_id, :weight, :start_time)
     end

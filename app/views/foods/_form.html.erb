@@ -11,17 +11,25 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.file_field :image %>
-  </div>
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-6">
+          <div class="field">
+            <%= form.label :image, "写真", class: "label" %>
+            <%= form.file_field :image, class: "input"%>
+          </div>
 
-  <div class="field">
-    <%= form.label :body %>
-    <%= form.text_area :body %>
-  </div>
+          <div class="field">
+            <%= form.label :body, "メモ",  class: "label" %>
+            <%= form.text_area :body, class: "textarea"%>
+          </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+          <div class="actions">
+            <%= form.submit '投稿', class: "button is-success"%>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </section>

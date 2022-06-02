@@ -19,6 +19,8 @@ gem 'dotenv-rails'
 gem "bulma-rails"
 gem 'rails_admin', '~> 3.0'
 gem 'cancancan'
+gem 'simple_calendar', '~> 2.4'
+gem 'devise-i18n'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

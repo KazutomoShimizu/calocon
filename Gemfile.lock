@@ -97,6 +97,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-i18n (1.10.2)
+      devise (>= 4.8.0)
     dotenv (2.7.6)
     dotenv-rails (2.7.6)
       dotenv (= 2.7.6)
@@ -224,6 +226,8 @@ GEM
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
     semantic_range (3.0.0)
+    simple_calendar (2.4.3)
+      rails (>= 3.0)
     spring (2.1.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -283,6 +287,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   carrierwave (~> 2.0)
   devise
+  devise-i18n
   dotenv-rails
   jbuilder (~> 2.7)
   letter_opener_web
@@ -295,6 +300,7 @@ DEPENDENCIES
   rexml
   sass-rails (>= 6)
   selenium-webdriver
+  simple_calendar (~> 2.4)
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)

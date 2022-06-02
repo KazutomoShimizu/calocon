@@ -1,6 +1,14 @@
-<h1>Editing Food</h1>
+<section class="hero is-info">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        食事内容編集
+      </h1>
+    </div>
+  </div>
+</section>
 
 <%= render 'form', food: @food %>
 
-<%= link_to 'Show', @food %> |
-<%= link_to 'Back', foods_path %>
+<%= link_to '詳細画面', @food, class: "button is-primary"%>
+<%= link_to '戻る', foods_path, class: "button is-primary" %>

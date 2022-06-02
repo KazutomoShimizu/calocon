@@ -1,6 +1,5 @@
 class FoodsController < ApplicationController
   before_action :set_food, only: %i[ show edit update destroy ]
-  before_action :baria_user, only: %i[ edit destroy update ]
 
   def index
     @foods = Food.all

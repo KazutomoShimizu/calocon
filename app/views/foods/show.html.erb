@@ -1,14 +1,53 @@
-<p id="notice"><%= notice %></p>
+<section class="hero is-info is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        食事内容詳細
+      </h1>
+    </div>
+  </div>
+</section>
 
-<p>
-  <strong>Image:</strong>
-  <%= image_tag @food.image.url %>
-</p>
-
-<p>
-  <strong>Body:</strong>
-  <%= @food.body %>
-</p>
-
-<%= link_to 'Edit', edit_food_path(@food) %> |
-<%= link_to 'Back', foods_path %>
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-6">
+        <div class="column">
+          <article class="panel is-link">
+            <p class="panel-heading">
+              <%= @food.user.name %>
+            </p>
+          </article>
+        </div>
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <%= image_tag @food.image.url %>
+            </figure>
+          </div>
+          <div class="content">
+            <table class="table is-narrow">
+              <tr>
+                <th>メモ</th>
+              </tr>
+              <tr>
+                <td><%= simple_format @food.body %></td>
+              </tr>
+            </table>
+            <% if @food.user == current_user %>
+              <%= link_to "編集", edit_food_path(@food.id), class: "button is-success" %>
+              <%= link_to "削除", @food, method: :delete, data: { confirm: '削除してよろしいですか?'}, class: "button is-success" %>
+            <% end %>
+            <% unless @food.user_id == current_user.id %>
+              <% if @bookmark.present? %>
+                <%= link_to 'お気に入り解除', bookmark_path(id: @bookmark.id), method: :delete, class: "button is-primary" %>
+              <% else %>
+                <%= link_to 'お気に入り', bookmarks_path(food_id: @food.id), method: :post, class: "button is-primary" %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

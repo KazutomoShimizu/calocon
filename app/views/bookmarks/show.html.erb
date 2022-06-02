@@ -1,7 +1,33 @@
-<p><strong>お気に入り投稿一覧</strong></p>
+<section class="hero is-info is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        お気に入り投稿一覧
+      </h1>
+    </div>
+  </div>
+</section>
+
 <% if @bookmark_list.present? %>
-  <% @bookmark_list.each do |food| %>
-    <%= food.body %>
-    <%= image_tag food.image.url%>
-  <% end %>
+  <section class="section">
+    <div class="container">
+      <div class="columns is-multiline">
+        <% @bookmark_list.each do |food| %>
+          <div class="column is-4">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <%= link_to food_path(food) do %>
+                    <%= image_tag food.image.url if food.image.present? %>
+                  <% end %>
+                </figure>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </section>
 <% end %>
+
+<%= link_to '戻る', user_path(current_user.id), class: "button is-primary"%>
