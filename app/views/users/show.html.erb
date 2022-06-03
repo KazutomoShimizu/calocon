@@ -38,17 +38,33 @@
                 <% end %>
               </tr>
             </table>
-            <div class="columns">
-              <div class="column">
-                <%= link_to "お気に入り投稿一覧", bookmark_path, class: "button is-link is-large" %>
-              </div>
-              <div class="column">
-                <%= link_to "体重記録", weight_histories_path, class: "button is-link is-large" %>
-              </div>
-            </div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <table class="table is-fullwidth">
+        <td>
+          <div class="column">
+            <%= link_to "お気に入り投稿", bookmark_path, class: "button is-link is-large" %>
+          </div>
+        </td>
+        <td>
+          <div class="column">
+            <%= link_to "体重記録", weight_histories_path, class: "button is-link is-large" %>
+          </div>
+        </td>
+        <td>
+          <div class="column">
+            <%= link_to "カロリー計算", momentum_counts_path, class: "button is-link is-large" %>
+          </div>
+        <td>
+      </table>
     </div>
   </div>
 </section>

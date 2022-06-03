@@ -36,8 +36,7 @@ https://docs.google.com/spreadsheets/d/1yvS4c0eo-EHma8t_1DU-53HyVQ86TP3636Rwh79l
 https://cacoo.com/diagrams/UWxs4wb3Zw3Mloka/56C06
 
 ## ER図
-<img width="547" alt="スクリーンショット 2022-06-01 14 47 35" src="https://user-images.githubusercontent.com/100674671/171336445-e1b9e423-a491-44aa-a0ea-97f370b6080d.png">
-
+<img width="621" alt="スクリーンショット 2022-06-03 15 52 36" src="https://user-images.githubusercontent.com/100674671/171802931-4741ffbf-e30e-4cc9-ad4e-71524ad47282.png">
 
 ## 画面推移図
 <img width="782" alt="スクリーンショット 2022-05-25 13 35 43" src="https://user-images.githubusercontent.com/100674671/170181095-d1add05a-0bc5-4404-83b8-bee69985e75c.png">

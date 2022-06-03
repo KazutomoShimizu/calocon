@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :users
   resources :bookmarks, only: [:create, :destroy, :show]
   resources :weight_histories
+  resources :momentum_counts
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
