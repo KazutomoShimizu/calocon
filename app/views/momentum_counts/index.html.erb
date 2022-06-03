@@ -7,8 +7,8 @@
       <%= form.number_field :bmr, type: "integer", class: "form-control",id: "inputcity" %>
     </span>
     <span class = "form-group col-md-4">
-      <%= form.collection :momentum_count, @momentum_counts.map{ |momentum_count| [momentum_count.work, momentum_count.magnification {data-magnification: momentum_count.magnification}] } %> 
-    </span>
+      <%= form.label :magnification %>
+      <%= form.collection_select :magnification, MomentumCount.all, :magnification, :work %>
     <span>
       <%= form.submit "計算", class:"button is-primary" %>
     </span>
