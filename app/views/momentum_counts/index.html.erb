@@ -1,2 +1,15 @@
 <h1>MomentumCounts#index</h1>
 <p>Find me in app/views/momentum_counts/index.html.erb</p>
+
+<%= form_with(url: momentum_counts_path, local: true, method: :get) do |form| %>
+  <div class = "form-row">
+    <span class = "form-group col-md-4">
+      <%= form.number_field :bmr, type: "integer", class: "form-control",id: "inputcity" %>
+    </span>
+    <span class = "form-group col-md-4">
+      <%= form.collection :momentum_count, @momentum_counts.map{ |momentum_count| [momentum_count.work, momentum_count.magnification {data-magnification: momentum_count.magnification}] } %> 
+    </span>
+    <span>
+      <%= form.submit "計算", class:"button is-primary" %>
+    </span>
+<% end %>
