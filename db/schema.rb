@@ -34,12 +34,10 @@ ActiveRecord::Schema.define(version: 2022_06_01_054327) do
   end
 
   create_table "momentum_counts", force: :cascade do |t|
-    t.string "name"
+    t.string "work"
     t.integer "magnification"
-    t.bigint "weight_history_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["weight_history_id"], name: "index_momentum_counts_on_weight_history_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -74,6 +72,5 @@ ActiveRecord::Schema.define(version: 2022_06_01_054327) do
   add_foreign_key "bookmarks", "foods"
   add_foreign_key "bookmarks", "users"
   add_foreign_key "foods", "users"
-  add_foreign_key "momentum_counts", "weight_histories"
   add_foreign_key "weight_histories", "users"
 end
