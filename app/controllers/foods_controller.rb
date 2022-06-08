@@ -2,11 +2,11 @@ class FoodsController < ApplicationController
   before_action :set_food, only: %i[ show edit update destroy ]
 
   def index
-    @foods = Food.all
+    @foods = Food.all.order(created_at: :desc)
   end
 
   def show
-    @feed = Food.find_by(id:params[:id])
+    @food = Food.find_by(id:params[:id])
     @user = User.find_by(id:@food.user_id)
     @bookmark = current_user.bookmarks.find_by(food_id: @food.id)
   end

@@ -13,7 +13,7 @@
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="columns is-centered">
-          <div class="column is-4">
+          <div class="column is-2">
             <figure class="image is-128x128"  style="margin-left: auto; margin-right: auto;">
               <% if @user.image? %>
                 <%= image_tag @user.image.url, class: "profile_image is-rounded" %>
@@ -45,25 +45,23 @@
   </div>
 </section>
 
-<section class="section">
+<section class="table">
   <div class="container">
     <div class="columns">
       <table class="table is-fullwidth">
-        <td>
-          <div class="column">
-            <%= link_to "お気に入り投稿", bookmark_path, class: "button is-link is-large" %>
-          </div>
-        </td>
-        <td>
-          <div class="column">
-            <%= link_to "体重記録", weight_histories_path, class: "button is-link is-large" %>
-          </div>
-        </td>
-        <td>
-          <div class="column">
-            <%= link_to "カロリー計算", momentum_counts_path, class: "button is-link is-large" %>
-          </div>
-        <td>
+         <thead>
+           <tr>
+             <th><div class="column">
+               <%= link_to "お気に入り投稿", bookmark_path, class: "button is-link is-large" %>
+            </div></th>
+            <th><div class="column">
+              <%= link_to "体重記録", weight_histories_path, class: "button is-link is-large" %>
+            </div></th>
+            <th><div class="column">
+              <%= link_to "カロリー計算", momentum_counts_path, class: "button is-link is-large" %>
+            </div></th>
+          </tr>
+        </thead>
       </table>
     </div>
   </div>

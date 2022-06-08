@@ -1,13 +1,19 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Weight Histories</h1>
+<section class="hero is-white">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        体重記録
+      </h1>
+    </div>
+  </div>
+</section>
 
   <div class="col-md-9 col-sm-12 col-xs-12">
     <%= month_calendar events: @weight_histories do |date, weight_histories| %>
       <%= date.day %>
       <% weight_histories.each do |weight_histories| %>
         <div>
-          <%= link_to "weight_histories", edit_weight_history_path(weight_histories) %>
+          <%= link_to "記録済み", edit_weight_history_path(weight_histories) %>
         </div>
       <% end %>
     <% end %>
@@ -24,13 +30,13 @@
         <tr>
           <td><%= weight_history.weight %>Kg</td>
           <td><%= weight_history.start_time.strftime("%Y-%m-%d %H:%M") %></td>
-          <td><%= link_to 'Show', weight_history_path(weight_history.id) %></td>
-          <td><%= link_to 'Edit', edit_weight_history_path(weight_history) %></td>
-          <td><%= link_to 'Destroy', weight_history, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Show', weight_history_path(weight_history.id), class: "button is-primary" %></td>
+          <td><%= link_to 'Edit', edit_weight_history_path(weight_history), class: "button is-primary" %></td>
+          <td><%= link_to 'Destroy', weight_history, method: :delete, data: { confirm: '本当に削除してよろしいですか?' }, class: "button is-primary" %></td>
         </tr>
       <% end %>
   	</table>
   <br>
 </div>
 
-<%= link_to 'New Weight History', new_weight_history_path %>
+<%= link_to '体重を記録する', new_weight_history_path, class: "button is-link" %>

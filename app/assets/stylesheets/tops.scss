@@ -1,0 +1,40 @@
+// Place all the styles related to the Top controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.background {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-image: url(./ccccccc.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.filter {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(0,0,0,0.5);
+  overflow-y: scroll;
+}
+
+#top_content {
+  width: 500px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+  padding: 50px 20px;
+  background-color: rgba(0,0,0,0.8);
+  color: #fff;
+  font-family: cursive;
+}
+
+#top_p {
+  font-family: cursive;
+}

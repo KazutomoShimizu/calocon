@@ -16,7 +16,12 @@
 
 @import "bulma";
 @import "simple_calendar";
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
 
 .notification:not(:last-child){
 	margin-bottom: 0;
+}
+
+.title{
+	font-family:  'Sacramento',cursive;
 }

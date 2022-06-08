@@ -1,15 +1,176 @@
-<h1>MomentumCounts#index</h1>
-<p>Find me in app/views/momentum_counts/index.html.erb</p>
+<section class="hero is-white">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        摂取カロリー計算
+      </h1>
+    </div>
+  </div>
+</section>
 
-<%= form_with(url: momentum_counts_path, local: true, method: :get) do |form| %>
-  <div class = "form-row">
-    <span class = "form-group col-md-4">
-      <%= form.number_field :bmr, type: "integer", class: "form-control",id: "inputcity" %>
-    </span>
-    <span class = "form-group col-md-4">
-      <%= form.label :magnification %>
-      <%= form.collection_select :magnification, MomentumCount.all, :magnification, :work %>
-    <span>
-      <%= form.submit "計算", class:"button is-primary" %>
-    </span>
-<% end %>
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-6">
+        <%= form_with(url: momentum_counts_path, local: true, method: :get) do |form| %>
+          <div class = "field">
+            <%= form.label :基礎代謝, class: "label"%>
+            <%= form.number_field :bmr, type: "integer", class: "form-control",id: "inputcity", class: "input" %>kcal
+          </div>
+
+          <div class = "select">
+            <%= form.label :運動量, class: "label" %>
+            <%= form.collection_select :magnification, MomentumCount.all, :magnification, :work %>
+          </div>
+
+          <div class="actions">
+            <%= form.submit "計算", id: "keisan", class:"button is-primary" %>
+          </div>
+        <% end %>
+        <article class="panel is-link">
+          <p class="panel-heading">
+            目標摂取カロリー
+          </p>
+          <div class = "box">
+            <strong><%= @calorie %></strong>kcal
+          </div>
+        </article>
+        <article class="panel is-link">
+          <p class="panel-heading">
+            ダイエット目標摂取カロリー(16週間で-8kg)
+          </p>
+          <div class = "box">
+            <strong><%= @diet %></strong>kcal
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+			<div class="container">
+				<div class="columns is-multiline">
+					<div class="column is-one-third">
+						<article class="media notification has-background-white">
+							<figure class="media-left">
+								<span class="icon">
+									<i class="fas fa-bullhorn has-text-danger"></i>
+								</span>
+							</figure>
+							<div class="media-content">
+								<div class="content">
+									<h1 class="title is-size-4">Warning</h1>
+									<p class="subtitle is-size-6">
+										目標摂取カロリーは <strong>目安</strong>となります。
+                    必ずしも正しい数字ではありません。
+									</p>
+                  <p class="subtitle is-size-6">
+                    ダイエット目標摂取カロリーは16週間で-8kgを目標とした数値です。
+                  </p>
+                  <p　class="subtitle is-size-6">
+                    基礎代謝は計算で求められますが、筋肉量などの違いで誤差が生じます。計測機器を使用し、正しい数値を入力してください。
+                  </p>
+								</div>
+							</div>
+						</article>
+					</div>
+					<div class="column is-one-third">
+						<article class="media notification has-background-white">
+							<figure class="media-left">
+								<span class="icon">
+									<i class="fas fa-exclamation-triangle has-text-warning"></i>
+								</span>
+							</figure>
+							<div class="media-content">
+								<div class="content">
+									<h1 class="title is-size-4">運動量について-Ⅰ</h1>
+									<p class="subtitle is-size-6">
+										・ほぼ運動しない：デスクワーク、通勤や家事のレベル
+									</p>
+                  <p class="subtitle is-size-6">
+										・軽い運動：週に1〜2回程度の低負荷運動
+									</p>
+                  <p class="subtitle is-size-6">
+										・中程度の運動：週に3〜4回程度の低負荷運動
+									</p>
+								</div>
+							</div>
+						</article>
+					</div>
+					<div class="column is-one-third">
+						<article class="media notification has-background-white">
+							<figure class="media-left">
+								<span class="icon">
+									<i class="fas fa-exclamation-triangle has-text-warning"></i>
+								</span>
+							</figure>
+							<div class="media-content">
+								<div class="content">
+									<h1 class="title is-size-4">運動量について-Ⅱ</h1>
+									<p class="subtitle is-size-5">
+										・激しい運動：週に4〜6回程度の高負荷運動
+									</p>
+                  <p class="subtitle is-size-5">
+										・非常に激しい運動：週に6〜7回程度の高負荷運動(2時間程度の激しい運動)
+									</p>
+								</div>
+							</div>
+						</article>
+					</div>
+					<div class="column is-one-third">
+						<article class="media notification has-background-white">
+							<figure class="media-left">
+								<span class="icon">
+                  <i class="fas fa-edit has-text-info"></i>
+								</span>
+							</figure>
+							<div class="media-content">
+								<div class="content">
+									<h1 class="title is-size-4">Advice-Ⅰ</h1>
+									<p class="subtitle is-size-5">
+										目標摂取カロリー内でも食事の <strong>内容</strong>によっては太ってしまう可能性があります。
+									</p>
+								</div>
+							</div>
+						</article>
+					</div>
+					<div class="column is-one-third">
+						<article class="media notification has-background-white">
+							<figure class="media-left">
+								<span class="icon">
+                  <i class="fas fa-edit has-text-info"></i>
+								</span>
+							</figure>
+							<div class="media-content">
+								<div class="content">
+									<h1 class="title is-size-4">Advice-Ⅱ</h1>
+									<p class="subtitle is-size-5">
+										体型維持やダイエットには適度な運動が効果的です。
+                    無理のない範囲で運動することをおすすめします。
+									</p>
+								</div>
+							</div>
+						</article>
+					</div>
+					<div class="column is-one-third">
+						<article class="media notification has-background-white">
+							<figure class="media-left">
+								<span class="icon">
+                  <i class="fas fa-edit has-text-info"></i>
+								</span>
+							</figure>
+							<div class="media-content">
+								<div class="content">
+									<h1 class="title is-size-4">Advice-Ⅲ</h1>
+									<p class="subtitle is-size-5">
+										食事の内容は<strong>タンパク質、脂質、糖質</strong>のバランスが大切です。
+									</p>
+								</div>
+							</div>
+						</article>
+					</div>
+				</div>
+			</div>
+		</section>

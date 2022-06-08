@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2022_06_01_054327) do
 
   create_table "momentum_counts", force: :cascade do |t|
     t.string "work"
-    t.decimal "magnification"
+    t.float "magnification"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
