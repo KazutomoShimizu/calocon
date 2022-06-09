@@ -11,17 +11,24 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :weight %>
-    <%= form.number_field :weight %>
-  </div>
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-6">
+          <div class="field">
+            <%= form.label :weight, class: "label" %>
+            <%= form.number_field :weight, class: "input"%>
+          </div>
 
-  <div class="field">
-    <%= form.label :start_time %>
-    <%= form.datetime_select :start_time %>
-  </div>
+          <%= form.label :計測日時, class: "label" %>
+          <%= form.datetime_select :start_time %>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+
+          <div class="actions" id = "submit_weight">
+            <%= form.submit "記録", class: "button is-primary"%>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </section>

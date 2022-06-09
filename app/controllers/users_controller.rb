@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @foods = @user.foods
+    @foods = @user.foods.order("created_at desc")
   end
 
   def edit

@@ -19,20 +19,20 @@
     <% end %>
 		<table class="memo table table-bordered">
 			<thead>
-				<tr>
+				<tr class = "box">
 					<th>体重</th>
-					<th>計測日時</th>
+			    <th>計測日時</th>
 					<th></th>
 					<th></th>
 				</tr>
 		  </thead>
       <% @weight_histories.each do |weight_history| %>
-        <tr>
-          <td><%= weight_history.weight %>Kg</td>
-          <td><%= weight_history.start_time.strftime("%Y-%m-%d %H:%M") %></td>
-          <td><%= link_to 'Show', weight_history_path(weight_history.id), class: "button is-primary" %></td>
-          <td><%= link_to 'Edit', edit_weight_history_path(weight_history), class: "button is-primary" %></td>
-          <td><%= link_to 'Destroy', weight_history, method: :delete, data: { confirm: '本当に削除してよろしいですか?' }, class: "button is-primary" %></td>
+        <tr class = "box">
+          <td><strong><%= weight_history.weight %></strong>Kg</td>
+          <td><strong><%= weight_history.start_time.strftime("%Y-%m-%d %H:%M") %></strong></td>
+          <td><%= link_to 'Detail', weight_history_path(weight_history.id), class: "button is-primary is-small" %></td>
+          <td><%= link_to 'Edit', edit_weight_history_path(weight_history), class: "button is-primary is-small" %></td>
+          <td><%= link_to 'Destroy', weight_history, method: :delete, data: { confirm: '本当に削除してよろしいですか?' }, class: "button is-primary is-small" %></td>
         </tr>
       <% end %>
   	</table>

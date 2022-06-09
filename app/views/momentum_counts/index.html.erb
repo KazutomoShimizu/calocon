@@ -18,8 +18,8 @@
             <%= form.number_field :bmr, type: "integer", class: "form-control",id: "inputcity", class: "input" %>kcal
           </div>
 
+          <%= form.label :運動量, class: "label" %>
           <div class = "select">
-            <%= form.label :運動量, class: "label" %>
             <%= form.collection_select :magnification, MomentumCount.all, :magnification, :work %>
           </div>
 
@@ -27,7 +27,7 @@
             <%= form.submit "計算", id: "keisan", class:"button is-primary" %>
           </div>
         <% end %>
-        <article class="panel is-link">
+        <article class="panel is-link", id = "panel_id">
           <p class="panel-heading">
             目標摂取カロリー
           </p>
@@ -109,11 +109,11 @@
 							<div class="media-content">
 								<div class="content">
 									<h1 class="title is-size-4">運動量について-Ⅱ</h1>
-									<p class="subtitle is-size-5">
-										・激しい運動：週に4〜6回程度の高負荷運動
+									<p class="subtitle is-size-6">
+										・激しい運動：週に4〜6回程度の高負荷運動(有酸素運動＋無酸素運動)
 									</p>
-                  <p class="subtitle is-size-5">
-										・非常に激しい運動：週に6〜7回程度の高負荷運動(2時間程度の激しい運動)
+                  <p class="subtitle is-size-6">
+										・非常に激しい運動：週に6〜7回程度の高負荷運動(2時間程度の有酸素運動＋無酸素運動)
 									</p>
 								</div>
 							</div>

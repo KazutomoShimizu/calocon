@@ -1,19 +1,29 @@
-<p id="notice"><%= notice %></p>
+<article class="panel is-success", id = "panel_id">
+  <p class="panel-heading">
+    ユーザー名
+  </p>
+  <div class = "box">
+    <strong><%= @weight_history.user.name %></strong>
+  </div>
+</article>
 
-<p>
-  <strong>User:</strong>
-  <%= @weight_history.user.name %>
-</p>
+<article class="panel is-success", id = "panel_id">
+  <p class="panel-heading">
+    体重
+  </p>
+  <div class = "box">
+    <strong><%= @weight_history.weight %></strong>kg
+  </div>
+</article>
 
-<p>
-  <strong>Weight:</strong>
-  <%= @weight_history.weight %>
-</p>
+<article class="panel is-success", id = "panel_id">
+  <p class="panel-heading">
+    計測日時
+  </p>
+  <div class = "box">
+    <strong><%= @weight_history.start_time.strftime("%Y-%m-%d %H:%M") %></strong>
+  </div>
+</article>
 
-<p>
-  <strong>Start time:</strong>
-  <%= @weight_history.start_time %>
-</p>
-
-<%= link_to 'Edit', edit_weight_history_path(@weight_history) %> |
-<%= link_to 'Back', weight_histories_path %>
+<%= link_to 'Edit', edit_weight_history_path(@weight_history), class: "button is-link is-small" %>
+<%= link_to 'Back', weight_histories_path, class: "button is-link is-small"  %>

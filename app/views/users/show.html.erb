@@ -1,8 +1,8 @@
-<section class="hero is-success">
+<section class="hero is-white">
   <div class="hero-body">
     <div class="container">
       <h1 class="title">
-        マイページ
+        Mypage
       </h1>
     </div>
   </div>
@@ -47,22 +47,42 @@
 
 <section class="table">
   <div class="container">
-    <div class="columns">
+    <div class="columns", id ="columns_mypage">
       <table class="table is-fullwidth">
          <thead>
            <tr>
-             <th><div class="column">
+             <th><div class="column", id = "column_mypage">
                <%= link_to "お気に入り投稿", bookmark_path, class: "button is-link is-large" %>
             </div></th>
-            <th><div class="column">
+            <th><div class="column", id = "column_mypage">
               <%= link_to "体重記録", weight_histories_path, class: "button is-link is-large" %>
             </div></th>
-            <th><div class="column">
+            <th><div class="column", id = "column_mypage">
               <%= link_to "カロリー計算", momentum_counts_path, class: "button is-link is-large" %>
             </div></th>
           </tr>
         </thead>
       </table>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-multiline">
+      <% @foods.each do |food| %>
+        <div class="column is-4">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <%= link_to food_path(food) do %>
+                  <%= image_tag food.image.url if food.image.present? %>
+                <% end %>
+              </figure>
+            </div>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </section>
