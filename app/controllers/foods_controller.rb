@@ -1,5 +1,6 @@
 class FoodsController < ApplicationController
   before_action :set_food, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   def index
     @foods = Food.all.order(created_at: :desc)

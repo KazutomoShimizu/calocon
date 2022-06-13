@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
 
   def show
     @user = User.find(params[:id])
+    unless current_user == @user
+      redirect_to foods_path
+    end
     @foods = @user.foods.order("created_at desc")
   end
 

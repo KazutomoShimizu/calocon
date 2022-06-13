@@ -1,5 +1,6 @@
 class WeightHistoriesController < ApplicationController
   before_action :set_weight_history, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   def index
     @weight_histories = WeightHistory.where(user_id: current_user.id).includes(:user).order("created_at DESC")
