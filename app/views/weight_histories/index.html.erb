@@ -30,9 +30,9 @@
         <tr class = "box">
           <td><strong><%= weight_history.weight %></strong>Kg</td>
           <td><strong><%= weight_history.start_time.strftime("%Y-%m-%d %H:%M") %></strong></td>
-          <td><%= link_to 'Detail', weight_history_path(weight_history.id), class: "button is-primary is-small" %></td>
-          <td><%= link_to 'Edit', edit_weight_history_path(weight_history), class: "button is-primary is-small" %></td>
-          <td><%= link_to 'Destroy', weight_history, method: :delete, data: { confirm: '本当に削除してよろしいですか?' }, class: "button is-primary is-small" %></td>
+          <td><%= link_to '詳細', weight_history_path(weight_history.id), class: "button is-primary is-small" %></td>
+          <td><%= link_to '編集', edit_weight_history_path(weight_history), class: "button is-primary is-small" %></td>
+          <td><%= link_to '削除', weight_history, method: :delete, data: { confirm: '本当に削除してよろしいですか?' }, class: "button is-primary is-small" %></td>
         </tr>
       <% end %>
   	</table>

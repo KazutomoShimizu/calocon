@@ -15,7 +15,7 @@
         <%= form_with(url: momentum_counts_path, local: true, method: :get) do |form| %>
           <div class = "field">
             <%= form.label :基礎代謝, class: "label"%>
-            <%= form.number_field :bmr, type: "integer", class: "form-control",id: "inputcity", class: "input" %>kcal
+            <%= form.number_field :bmr, type: "integer", placeholder: "(例)1800", class: "form-control",id: "inputcity", class: "input" %>kcal
           </div>
 
           <%= form.label :運動量, class: "label" %>

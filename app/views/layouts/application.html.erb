@@ -40,17 +40,22 @@
           <div class="navbar-item">
             <div class="field is-grouped">
               <p class="control">
-                <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "button is-warning is-light" %>
+                <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "button is-warning is-light" %>
               </p>
               <p class="control">
-                <%= link_to "Mypage", user_path(current_user.id), class: "button is-warning is-light" %>
+                <%= link_to "マイページ", user_path(current_user.id), class: "button is-warning is-light" %>
               </p>
               <p class="control">
-                <%= link_to "Foods", foods_path, class: "button is-warning is-light" %>
+                <%= link_to "食事一覧", foods_path, class: "button is-warning is-light" %>
               </p>
               <p class="control">
-                <%= link_to "Post Food", new_food_path, class: "button is-warning is-light"%>
+                <%= link_to "食事投稿", new_food_path, class: "button is-warning is-light"%>
               </p>
+              <% if current_user.admin? %>
+                <p class="control">
+                  <%= link_to "管理者ページ", rails_admin_path, class: "button is-warning is-light" %>
+                </p>
+              <%end %>
             </div>
           </div>
         </div>
@@ -59,10 +64,10 @@
           <div class="navbar-item">
             <div class="field is-grouped">
               <p class="control">
-                <%= link_to "Login", new_user_session_path, class: "button is-warning is-light" %>
+                <%= link_to "ログイン", new_user_session_path, class: "button is-warning is-light" %>
               </p>
               <p class="control">
-                <%= link_to "Signup!", new_user_registration_path, class: "button is-warning is-light" %>
+                <%= link_to "アカウント作成", new_user_registration_path, class: "button is-warning is-light" %>
               </p>
               <p class="control">
                 <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post, class: "button is-warning is-light" %>
