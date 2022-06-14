@@ -52,6 +52,7 @@ MomentumCount.create!(
   5.times do |i|
     Food.create!(
       image: File.open("./app/assets/images/def.png"),
-      body: "sample#{i + 1}"
+      body: "sample#{i + 1}",
+      user_id: 1
     )
   end
