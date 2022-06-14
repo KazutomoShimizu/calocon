@@ -64,6 +64,12 @@
               <p class="control">
                 <%= link_to "Signup!", new_user_registration_path, class: "button is-warning is-light" %>
               </p>
+              <p class="control">
+                <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post, class: "button is-warning is-light" %>
+              </p>
+              <p class="control">
+                <%= link_to 'ゲスト管理者ログイン（閲覧用）', users_admin_guest_sign_in_path, method: :post, class: "button is-warning is-light" %>
+              </p>
             </div>
           </div>
         </div>

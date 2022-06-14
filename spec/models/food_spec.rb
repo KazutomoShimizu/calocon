@@ -8,10 +8,8 @@ require 'rails_helper'
     end
     #context 'foodのimageが選択されている場合' do
       #it 'バリデーションが通る' do
-        #food = Food.new(
-          #image: Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec/fixtures/test.png')),
-          #body: 'test',
-          #)
+        #food = FactoryBot.build(:food)
+          #food.image = fixture_file_upload("test.png")
         #expect(food).to be_valid
       #end
     #end
