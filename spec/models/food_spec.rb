@@ -6,14 +6,13 @@ require 'rails_helper'
         expect(food).not_to be_valid
       end
     end
-    # context 'foodのimageが選択されている場合' do
-    #   it 'バリデーションが通る' do
-    #     food = Food.new(
-    #       image: Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec/fixtures/test.png')),
-    #       body: 'test',
-    #     )
-    #     binding.irb
-    #     expect(food).to be_valid
-    #   end
-    # end
+    context 'foodのimageが選択されている場合' do
+      it 'バリデーションが通る' do
+        food = Food.new(
+          image: Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec/fixtures/test.png')),
+          body: 'test',
+          )
+        expect(food).to be_valid
+      end
+    end
   end
