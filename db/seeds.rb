@@ -22,3 +22,38 @@ MomentumCount.create!(
   work: "非常に激しい運動",
   magnification: '1.9'
   )
+
+
+  User.create!(
+    name: "Admin",
+    email: "admin@admin.com",
+    password: "111111",
+    confirmed_at: Time.now,
+    admin: true)
+
+  5.times do |i|
+    User.create!(
+      name: "user#{i + 1}",
+      email: "user#{i + 1}@user.com",
+      password: "111111",
+      confirmed_at: Time.now,
+      admin: false
+    )
+  end
+
+  5.times do |i|
+    start_time = DateTime.new(2022,6,rand(1..30))
+    WeightHistory.create!(
+      weight: "6#{i + 1}",
+      start_time: start_time,
+      user_id: 1
+    )
+  end
+
+
+  5.times do |i|
+    Food.create!(
+      image: File.open("./app/assets/images/def.png"),
+      body: "sample#{i + 1}"
+    )
+  end
