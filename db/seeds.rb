@@ -28,7 +28,6 @@ MomentumCount.create!(
     name: "Admin",
     email: "admin@admin.com",
     password: "111111",
-    confirmed_at: Time.now,
     admin: true)
 
   5.times do |i|
@@ -36,7 +35,6 @@ MomentumCount.create!(
       name: "user#{i + 1}",
       email: "user#{i + 1}@user.com",
       password: "111111",
-      confirmed_at: Time.now,
       admin: false
     )
   end
