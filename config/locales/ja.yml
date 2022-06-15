@@ -1,5 +1,21 @@
 ja:
   activerecord:
+    models:
+      user: ユーザー
+      food: 食事
+      weight_history: 体重記録
+      momentum_count: カロリー計算
+    attributes:
+      user:
+        name: 名前
+      food:
+        image: 写真
+        body: メモ
+      weight_history:
+        weight: 体重
+        start_time: 測定日
+      momentum_count:
+        bmr: 基礎代謝
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'

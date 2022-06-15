@@ -13,6 +13,19 @@
     <div class="columns is-centered">
       <div class="column is-6">
         <%= form_with(url: momentum_counts_path, local: true, method: :get) do |form| %>
+          <article class="message is-danger mb-0", id = "error_id">
+            <% if @momentum_counts.errors.any? %>
+              <div class='message-header'>
+                <h2><%= @momentum_counts.errors.count %>件のエラーがあります。</h2>
+              </div>
+              <div class='message-body'>
+                <% @momentum_counts.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+                <% end %>
+              </div>
+            <% end %>
+          </article>
+
           <div class = "field">
             <%= form.label :基礎代謝, class: "label"%>
             <%= form.number_field :bmr, type: "integer", placeholder: "(例)1800", class: "form-control",id: "inputcity", class: "input" %>kcal

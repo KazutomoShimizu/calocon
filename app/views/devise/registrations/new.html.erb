@@ -8,14 +8,14 @@
   </div>
 </section>
 
+<%= render "devise/shared/error_messages", resource: resource %>
 <section class="section">
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-5">
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= render "devise/shared/error_messages", resource: resource %>
 
-        <div class="field">
+        <div class="field", id = "fieid_id">
           <%= f.label :name, class: "label"%>
           <p class="control has-icons-left">
             <%= f.text_field :name, autofocus: true, autocomplete: "name", :placeholder => "ユーザー名", class: "input" %>
@@ -39,7 +39,7 @@
         <div class="field">
           <%= f.label :password, class: "label" %>
           <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <em>(<%= @minimum_password_length %> 文字以上で入力して下さい)</em>
           <% end %>
           <p class="control has-icons-left">
             <%= f.password_field :password, autocomplete: "new-password" , :placeholder => "パスワード", class: "input"%>

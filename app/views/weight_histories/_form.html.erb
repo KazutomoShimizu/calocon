@@ -1,15 +1,16 @@
 <%= form_with(model: weight_history, local: true) do |form| %>
-  <% if weight_history.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(weight_history.errors.count, "error") %> prohibited this weight_history from being saved:</h2>
-
-      <ul>
-        <% weight_history.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+  <article class="message is-danger mb-0", id = "error_id">
+    <% if @weight_history.errors.any? %>
+      <div class='message-header'>
+        <h2><%= @weight_history.errors.count %>件のエラーがあります。</h2>
+      </div>
+      <div class='message-body'>
+        <% @weight_history.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
         <% end %>
-      </ul>
-    </div>
-  <% end %>
+      </div>
+    <% end %>
+  </article>
 
   <section class="section">
     <div class="container">

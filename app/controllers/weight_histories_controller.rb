@@ -26,7 +26,7 @@ class WeightHistoriesController < ApplicationController
 
     respond_to do |format|
       if @weight_history.save
-        format.html { redirect_to weight_history_url(@weight_history), notice: "Weight history was successfully created." }
+        format.html { redirect_to weight_history_url(@weight_history), notice: "体重を記録しました。" }
         format.json { render :show, status: :created, location: @weight_history }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class WeightHistoriesController < ApplicationController
   def update
     respond_to do |format|
       if @weight_history.update(weight_history_params)
-        format.html { redirect_to weight_history_url(@weight_history), notice: "Weight history was successfully updated." }
+        format.html { redirect_to weight_history_url(@weight_history), notice: "体重記録を更新しました。" }
         format.json { render :show, status: :ok, location: @weight_history }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -51,7 +51,7 @@ class WeightHistoriesController < ApplicationController
     @weight_history.destroy
 
     respond_to do |format|
-      format.html { redirect_to weight_histories_url, notice: "Weight history was successfully destroyed." }
+      format.html { redirect_to weight_histories_url, notice: "体重記録を削除しました。" }
       format.json { head :no_content }
     end
   end

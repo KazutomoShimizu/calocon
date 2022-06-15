@@ -8,17 +8,18 @@
   </div>
 </section>
 
-
-<% if @user.errors.any? %>
-  <div class="notification is-danger">
-    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this object from being saved: not successfully</h2>
-    <ul>
-      <% @user.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
+<article class="message is-danger mb-0", id = "error_id">
+  <% if @user.errors.any? %>
+    <div class='message-header'>
+      <h2><%= @user.errors.count %>件のエラーがあります。</h2>
+    </div>
+    <div class='message-body'>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
       <% end %>
-    </ul>
-  </div>
-<% end %>
+    </div>
+  <% end %>
+</article>
 
 <section class="section">
   <div class="container">

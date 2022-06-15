@@ -1,15 +1,16 @@
 <%= form_with(model: food, local: true) do |form| %>
-  <% if food.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(food.errors.count, "error") %> prohibited this food from being saved:</h2>
-
-      <ul>
-        <% food.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+  <article class="message is-danger mb-0", id = "error_id">
+    <% if @food.errors.any? %>
+      <div class='message-header'>
+        <h2><%= @food.errors.count %>件のエラーがあります。</h2>
+      </div>
+      <div class='message-body'>
+        <% @food.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
         <% end %>
-      </ul>
-    </div>
-  <% end %>
+      </div>
+    <% end %>
+  </article>
 
   <section class="section">
     <div class="container">
