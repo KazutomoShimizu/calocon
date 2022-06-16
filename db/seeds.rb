@@ -40,7 +40,7 @@ MomentumCount.create!(
   end
 
   5.times do |i|
-    start_time = DateTime.new(2022,6,rand(1..30))
+    start_time = DateTime.new(2022,6,rand(1..15))
     WeightHistory.create!(
       weight: "6#{i + 1}",
       start_time: start_time,

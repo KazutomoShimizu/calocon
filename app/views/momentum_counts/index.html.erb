@@ -13,34 +13,20 @@
     <div class="columns is-centered">
       <div class="column is-6">
         <%= form_with(url: momentum_counts_path, local: true, method: :get) do |form| %>
-          <article class="message is-danger mb-0", id = "error_id">
-            <% if @momentum_counts.errors.any? %>
-              <div class='message-header'>
-                <h2><%= @momentum_counts.errors.count %>件のエラーがあります。</h2>
-              </div>
-              <div class='message-body'>
-                <% @momentum_counts.errors.full_messages.each do |msg| %>
-                  <li><%= msg %></li>
-                <% end %>
-              </div>
-            <% end %>
-          </article>
-
           <div class = "field">
             <%= form.label :基礎代謝, class: "label"%>
-            <%= form.number_field :bmr, type: "integer", placeholder: "(例)1800", class: "form-control",id: "inputcity", class: "input" %>kcal
+            <%= form.number_field :bmr, placeholder: "(例)1800", class: "form-control",id: "inputcity", class: "input" %>kcal
           </div>
 
           <%= form.label :運動量, class: "label" %>
           <div class = "select">
             <%= form.collection_select :magnification, MomentumCount.all, :magnification, :work %>
           </div>
-
           <div class="actions">
             <%= form.submit "計算", id: "keisan", class:"button is-primary" %>
           </div>
         <% end %>
-        <article class="panel is-link", id = "panel_id">
+        <article class="panel is-link">
           <p class="panel-heading">
             目標摂取カロリー
           </p>
@@ -187,3 +173,7 @@
 				</div>
 			</div>
 		</section>
+
+    <footer class="footer">
+    	<p>Copyright © 2022 kazutomo_shimizu</p>
+    </footer>
