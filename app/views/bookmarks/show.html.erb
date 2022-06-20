@@ -1,12 +1,6 @@
-<section class="hero is-white">
-  <div class="hero-body">
-    <div class="container">
-      <h1 class="title">
-        お気に入り投稿
-      </h1>
-    </div>
-  </div>
-</section>
+<div class="mypage-img">
+	<img src= "/assets/fav.png", width="20%">
+</div>
 
 <% if @bookmark_list.present? %>
   <section class="section">
@@ -30,7 +24,6 @@
   </section>
 <% end %>
 
-<%= link_to '戻る', user_path(current_user.id), class: "button is-primary"%>
 
 <footer class="footer">
   <p>Copyright © 2022 kazutomo_shimizu</p>

@@ -1,19 +1,13 @@
-<section class="hero is-white">
-  <div class="hero-body">
-    <div class="container">
-      <h1 class="title">
-        Mypage
-      </h1>
-    </div>
-  </div>
-</section>
+<div class="mypage-img">
+	<img src= "/assets/mypage.png", width="20%">
+</div>
 
 <section class="section">
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-12">
         <div class="columns is-centered">
-          <div class="column is-2">
+          <div class="column is-3">
             <figure class="image is-128x128"  style="margin-left: auto; margin-right: auto;">
               <% if @user.image? %>
                 <%= image_tag @user.image.url, class: "profile_image is-rounded" %>
@@ -45,27 +39,9 @@
   </div>
 </section>
 
-<section class="table">
-  <div class="container">
-    <div class="columns", id ="columns_mypage">
-      <table class="table is-fullwidth">
-         <thead>
-           <tr>
-             <th><div class="column", id = "column_mypage">
-               <%= link_to "お気に入り投稿", bookmark_path, class: "button is-link is-large" %>
-            </div></th>
-            <th><div class="column", id = "column_mypage">
-              <%= link_to "体重記録", weight_histories_path, class: "button is-link is-large" %>
-            </div></th>
-            <th><div class="column", id = "column_mypage">
-              <%= link_to "カロリー計算", momentum_counts_path, class: "button is-link is-large" %>
-            </div></th>
-          </tr>
-        </thead>
-      </table>
-    </div>
-  </div>
-</section>
+<div class="mypage-line-img">
+	<img src= "/assets/line.png", width="100%">
+</div>
 
 <section class="section">
   <div class="container">

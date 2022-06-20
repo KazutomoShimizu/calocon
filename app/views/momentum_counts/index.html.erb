@@ -1,12 +1,6 @@
-<section class="hero is-white">
-  <div class="hero-body">
-    <div class="container">
-      <h1 class="title">
-        摂取カロリー計算
-      </h1>
-    </div>
-  </div>
-</section>
+<div class="keisan-img">
+	<img src= "/assets/keisan.png", width="25%">
+</div>
 
 <section class="section">
   <div class="container">
@@ -23,10 +17,10 @@
             <%= form.collection_select :magnification, MomentumCount.all, :magnification, :work %>
           </div>
           <div class="actions">
-            <%= form.submit "計算", id: "keisan", class:"button is-primary" %>
+            <%= form.submit "計算", id: "keisan", class:"button is-success" %>
           </div>
         <% end %>
-        <article class="panel is-link">
+        <article class="panel is-black">
           <p class="panel-heading">
             目標摂取カロリー
           </p>
@@ -34,7 +28,7 @@
             <strong><%= @calorie %></strong>kcal
           </div>
         </article>
-        <article class="panel is-link">
+        <article class="panel is-black">
           <p class="panel-heading">
             ダイエット目標摂取カロリー(16週間で-8kg)
           </p>

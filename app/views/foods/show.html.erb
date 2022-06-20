@@ -1,24 +1,11 @@
-<section class="hero is-white">
-  <div class="hero-body">
-    <div class="container">
-      <h1 class="title">
-        Food Detail
-      </h1>
-    </div>
-  </div>
-</section>
+<div class="food-show-img">
+	<img src= "/assets/fd.png", width="20%">
+</div>
 
 <section class="section">
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-6">
-        <div class="column">
-          <article class="panel is-link">
-            <p class="panel-heading">
-              <%= @food.user.name %>
-            </p>
-          </article>
-        </div>
         <div class="card">
           <div class="card-image">
             <figure class="image is-4by3">
@@ -35,14 +22,14 @@
               </tr>
             </table>
             <% if @food.user == current_user %>
-              <%= link_to "編集", edit_food_path(@food.id), class: "button is-success" %>
-              <%= link_to "削除", @food, method: :delete, data: { confirm: '削除してよろしいですか?'}, class: "button is-success" %>
+              <%= link_to "編集", edit_food_path(@food.id), class: "button is-primary" %>
+              <%= link_to "削除", @food, method: :delete, data: { confirm: '削除してよろしいですか?'}, class: "button is-primary" %>
             <% end %>
             <% unless @food.user_id == current_user.id %>
               <% if @bookmark.present? %>
-                <%= link_to 'お気に入り解除', bookmark_path(id: @bookmark.id), method: :delete, class: "button is-primary" %>
+                <%= link_to 'お気に入り解除', bookmark_path(id: @bookmark.id), method: :delete, class: "button is-danger" %>
               <% else %>
-                <%= link_to 'お気に入り', bookmarks_path(food_id: @food.id), method: :post, class: "button is-primary" %>
+                <%= link_to 'お気に入り', bookmarks_path(food_id: @food.id), method: :post, class: "button is-success" %>
               <% end %>
             <% end %>
           </div>

@@ -1,11 +1,7 @@
-<article class="panel is-success", id = "panel_id">
-  <p class="panel-heading">
-    ユーザー名
-  </p>
-  <div class = "box">
-    <strong><%= @weight_history.user.name %></strong>
-  </div>
-</article>
+<div class="weight-show-img">
+	<img src= "/assets/wd.png", width="20%">
+</div>
+
 
 <article class="panel is-success", id = "panel_id">
   <p class="panel-heading">
@@ -24,9 +20,6 @@
     <strong><%= @weight_history.start_time.strftime("%Y-%m-%d %H:%M") %></strong>
   </div>
 </article>
-
-<%= link_to '編集', edit_weight_history_path(@weight_history), class: "button is-link is-small" %>
-<%= link_to '戻る', weight_histories_path, class: "button is-link is-small"  %>
 
 <footer class="footer">
 	<p>Copyright © 2022 kazutomo_shimizu</p>

@@ -23,11 +23,13 @@
       </div>
     <% end %>
 
-    <nav class="navbar is-warning">
+    <nav class="navbar is-white", id="nav1">
       <div class="navbar-brand">
-        <%= link_to root_path, class: "navbar-item" do %>
-          <h1 class="title is-4" style="font-family: Georgia, serif;">caLocon</h1>
-        <% end %>
+        <div class="img_wrap">
+          <a>
+          <%= link_to image_tag("logo.png", :size =>'280x430'), "/" %>
+          </a>
+        </div>
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="menu">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
@@ -36,50 +38,87 @@
       </div>
 
       <% if user_signed_in? %>
+        <div class="navbar-start">
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">Account</a>
+            <div class="navbar-dropdown is-right">
+              <a class="navbar-item">
+                <%= link_to "My Page", user_path(current_user.id), class: "button is-white" %>
+              </a>
+              <a class="navbar-item">
+                <%= link_to "カロリー計算", momentum_counts_path, class: "button is-white" %>
+              </a>
+              <a class="navbar-item">
+                <%= link_to "体重記録", weight_histories_path, class: "button is-white" %>
+              </a>
+              <a class="navbar-item">
+                <%= link_to "お気に入り投稿", bookmark_path(current_user.id), class: "button is-white" %>
+              </a>
+            </div>
+          </div>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">Foods</a>
+              <div class="navbar-dropdown is-right">
+                <a class="navbar-item">
+                  <%= link_to "食事一覧", foods_path, class: "button is-white" %>
+                </a>
+                <a class="navbar-item">
+                  <%= link_to "食事投稿", new_food_path, class: "button is-white"%>
+                </a>
+              </div>
+          </div>
+        </div>
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="field is-grouped">
               <p class="control">
-                <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "button is-warning is-light" %>
+                <strong>
+                <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "button is-black" %>
+                </strong>
               </p>
-              <p class="control">
-                <%= link_to "マイページ", user_path(current_user.id), class: "button is-warning is-light" %>
-              </p>
-              <p class="control">
-                <%= link_to "食事一覧", foods_path, class: "button is-warning is-light" %>
-              </p>
-              <p class="control">
-                <%= link_to "食事投稿", new_food_path, class: "button is-warning is-light"%>
-              </p>
-              <% if current_user.admin? %>
-                <p class="control">
-                  <%= link_to "管理者ページ", rails_admin_path, class: "button is-warning is-light" %>
-                </p>
-              <% end %>
             </div>
           </div>
+          <% if current_user.admin? %>
+            <div class="navbar-item">
+              <div class="field is-grouped">
+                <p class="control">
+                  <strong>
+                  <%= link_to "Admin", rails_admin_path, class: "button is-black" %>
+                  </strong>
+                </p>
+              </div>
+            </div>
+          <% end %>
         </div>
       <% else %>
         <div class="navbar-end">
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">Guest</a>
+            <div class="navbar-dropdown is-right">
+              <a class="navbar-item">
+                <%= link_to 'Guest User（閲覧用）', users_guest_sign_in_path, method: :post, class: "button is-white" %>
+              </a>
+              <a class="navbar-item">
+                <%= link_to 'Guest Admin（閲覧用）', users_admin_guest_sign_in_path, method: :post, class: "button is-white" %>
+              </a>
+            </div>
+          </div>
           <div class="navbar-item">
             <div class="field is-grouped">
               <p class="control">
-                <%= link_to "ログイン", new_user_session_path, class: "button is-warning is-light" %>
+                <strong>
+                <%= link_to "Login", new_user_session_path, class: "button is-black" %>
+                </strong>
               </p>
               <p class="control">
-                <%= link_to "アカウント作成", new_user_registration_path, class: "button is-warning is-light" %>
-              </p>
-              <p class="control">
-                <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post, class: "button is-warning is-light" %>
-              </p>
-              <p class="control">
-                <%= link_to 'ゲスト管理者ログイン（閲覧用）', users_admin_guest_sign_in_path, method: :post, class: "button is-warning is-light" %>
+                <strong>
+                <%= link_to "Signup", new_user_registration_path, class: "button is-black" %>
+                </strong>
               </p>
             </div>
           </div>
         </div>
       <% end %>
-
     </nav>
     <%= yield %>
   </body>
